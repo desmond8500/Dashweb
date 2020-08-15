@@ -2,6 +2,9 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 
+Vue.component("tabler-header", require("../components/tabler/layout/tabler-header.vue").default);
+Vue.component("tabler-footer", require("../components/tabler/layout/tabler-footer.vue").default);
+
 Vue.use(VueRouter);
 
 const routes = [
