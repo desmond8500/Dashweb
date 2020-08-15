@@ -54,19 +54,12 @@
                       </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                      <!-- <a class="dropdown-item" href="#">
-                        <i class="dropdown-icon fe fe-user"></i> Profile
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <i class="dropdown-icon fe fe-settings"></i> Settings
-                      </a> -->
-                      <router-link v-for="item in user.menu" :key="item.id" class="dropdown-item" :to="item.link">
-                        <span class="float-right"><span v-if="item.badge" class="badge badge-primary">{{item.badge}}</span></span>
-                        <i class="dropdown-icon" :class="item.icon"></i> {{ item.name }}
-                      </router-link>
-                      <!-- <a class="dropdown-item" href="#">
-                        <i class="dropdown-icon fe fe-send"></i> Message
-                      </a> -->
+                      <div v-for="item in user.menu" :key="item.id" class="dropdown-item" >
+                        <router-link :to="item.link" class="text-secondary">
+                          <span class="float-right"><span v-if="item.badge" class="badge badge-primary">{{item.badge}}</span></span>
+                          <i class="dropdown-icon" :class="item.icon"></i> {{ item.name }}
+                        </router-link>
+                      </div>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">
                         <i class="dropdown-icon fe fe-help-circle"></i> Besoin d'aide ?
@@ -126,12 +119,29 @@ export default {
         return {
             logo: 'tabler/demo/brand/tabler.svg',
             menus: [
-                { id: 1, name: 'Acceuil', link: '/', icon: 'fe fe-home', submenu: null },
-                { id: 2, name: 'Menu 1', link: null, icon: 'fe fe-box', 
+                { id: 1, name: 'Acceuil', link: '/',  icon: 'fe fe-home', submenu: null },
+                { id: 2, name: 'Projets', link: null, icon: 'fe fe-box', 
                     submenu: [
-                        { id: 1, name: 'Acceuil', link: '/about', icon: 'fe fe-home' },
-                        { id: 2, name: 'Acceuil', link: '/about', icon: 'fe fe-home' },
-                        { id: 3, name: 'Acceuil', link: '/about', icon: 'fe fe-home' },
+                        { id: 1, name: 'Clients',       link: '/clients',   },
+                        { id: 2, name: 'Projets',       link: '/projets',   },
+                        { id: 3, name: 'Devis',         link: '/devis',     },
+                        { id: 4, name: 'Stock',         link: '/stock',     },
+                        { id: 5, name: 'Fournisseurs',  link: '/providers', },
+                    ] 
+                },
+                { id: 3, name: 'Medias', link: null, icon: 'fe fe-box', 
+                    submenu: [
+                        { id: 1, name: 'Images', link: '/images' },
+                        { id: 2, name: 'Gifs',   link: '/gifs',  },
+                        { id: 3, name: 'Videos', link: '/videos' },
+                        { id: 4, name: 'Audio',  link: '/audio', },
+                    ] 
+                },
+                { id: 4, name: 'Games', link: null, icon: 'fe fe-box', 
+                    submenu: [
+                        { id: 1, name: 'PC',          link: '/pc',         },
+                        { id: 2, name: 'Playstation', link: '/playstation' },
+                        { id: 3, name: 'Nintendo',    link: '/nintendo',   },
                     ] 
                 },
             ],
@@ -141,18 +151,13 @@ export default {
                 function: 'Administrateur',
                 avatar: '',
                 menu: [
-                    { id: 1, name: 'Profile', icon: 'fe fe-user', link: '/', badge: null },
-                    { id: 1, name: 'Réglages', icon: 'fe fe-settings', link: '/', badge: null },
-                    { id: 1, name: 'Mails', icon: 'fe fe-mail', link: '/', badge: 4 },
-                    { id: 1, name: 'Messages', icon: 'fe fe-send', link: '/', badge: null },
+                    { id: 1, name: 'Profile',   icon: 'fe fe-user',     link: '/profile',  badge: null },
+                    { id: 2, name: 'Réglages',  icon: 'fe fe-settings', link: '/reglages', badge: null },
+                    { id: 3, name: 'Mails',     icon: 'fe fe-mail',     link: '/mails',    badge: 4 },
+                    { id: 4, name: 'Messages',  icon: 'fe fe-send',     link: '/message',  badge: null },
                 ]
 
             },
-            notifications: [
-                { id: 1, avatar: '', message: '', date: '' },
-                { id: 1, avatar: '', message: '', date: '' },
-                { id: 1, avatar: '', message: '', date: '' },
-            ]
         }
     },
     methods: {
