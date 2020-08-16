@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+
 import Home from "../components/tabler/pages/index/index.vue";
 
 // layout
@@ -7,15 +8,13 @@ Vue.component("tabler-header", require("../components/tabler/layout/tabler-heade
 Vue.component("tabler-title", require("../components/tabler/layout/tabler-title.vue").default);
 Vue.component("tabler-footer", require("../components/tabler/layout/tabler-footer.vue").default);
 
-// Pages 
-
 Vue.use(VueRouter);
 
 const routes = [
   { path: "/", name: "Home", component: Home  },
 
   // Projets
-  { path: "/clients",   name: "Clients",  component: () => import( "../components/tabler/pages/projets/clients.vue")  },
+  { path: "/clients", name: "Clients", component: () => import( "../components/tabler/pages/projets/clients/clients.vue")  },
   { path: "/projets",   name: "Projets",  component: () => import( "../components/tabler/pages/projets/projets.vue")  },
   { path: "/stock",     name: "Stock",    component: () => import( "../components/tabler/pages/projets/stock.vue")    },
   { path: "/providers", name: "Provider", component: () => import( "../components/tabler/pages/projets/providers.vue")  },
@@ -37,6 +36,9 @@ const routes = [
   { path: "/pc",          name: "PC",           component: () => import( "../components/tabler/pages/games/pc.vue")  },
   { path: "/playstation", name: "Playstation",  component: () => import( "../components/tabler/pages/games/playstation.vue")  },
   { path: "/nintendo",    name: "Nintendo",     component: () => import( "../components/tabler/pages/games/nintendo.vue")  },
+  
+  // Docs
+  { path: "/doc", name: "Documentation", component: () => import( "../components/tabler/pages/docs/docs.vue")  },
 ];
 
 const router = new VueRouter({

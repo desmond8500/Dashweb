@@ -6,6 +6,9 @@
             <div class="col-6 col-sm-4 col-lg-2" v-for="resume in resumes" :key="resume.id">
                 <box1 :box="resume"/>
             </div>
+            <div class="col-6 col-sm-12 col-lg-4">
+                <quote/>
+            </div>
         </div>
            
 
@@ -15,17 +18,18 @@
 <script>
 
 import box1 from "../../component/box1";
+import quote from "../index/quote"
 
 export default {
     components: {
-        box1, 
+        box1, quote
     },
     data(){
         return{
             resumes: [
                 {
                     id: 1,
-                    name: 'Clients',
+                    name: 'Taches',
                     number: '12',
                     color: 'text-green',
                     percentage: '6%',

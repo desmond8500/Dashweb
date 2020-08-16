@@ -122,7 +122,7 @@ export default {
                 { id: 1, name: 'Acceuil', link: '/',  icon: 'fe fe-home', submenu: null },
                 { id: 2, name: 'Projets', link: null, icon: 'fe fe-box', 
                     submenu: [
-                        { id: 1, name: 'Clients',       link: '/clients',   },
+                      { id: 1, name: 'Clients',       link: '/clients',   },
                         { id: 2, name: 'Projets',       link: '/projets',   },
                         { id: 3, name: 'Devis',         link: '/devis',     },
                         { id: 4, name: 'Stock',         link: '/stock',     },
@@ -131,7 +131,7 @@ export default {
                 },
                 { id: 3, name: 'Medias', link: null, icon: 'fe fe-box', 
                     submenu: [
-                        { id: 1, name: 'Images', link: '/images' },
+                      { id: 1, name: 'Images', link: '/images' },
                         { id: 2, name: 'Gifs',   link: '/gifs',  },
                         { id: 3, name: 'Videos', link: '/videos' },
                         { id: 4, name: 'Audio',  link: '/audio', },
@@ -139,11 +139,12 @@ export default {
                 },
                 { id: 4, name: 'Games', link: null, icon: 'fe fe-box', 
                     submenu: [
-                        { id: 1, name: 'PC',          link: '/pc',         },
+                      { id: 1, name: 'PC',          link: '/pc',         },
                         { id: 2, name: 'Playstation', link: '/playstation' },
                         { id: 3, name: 'Nintendo',    link: '/nintendo',   },
                     ] 
                 },
+                { id: 5, name: 'Documentation', link: '/doc',  icon: 'fe fe-book', submenu: null },
             ],
             user: {
                 firstname: 'Jane',
